@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Header from './components/header';
+import Watchlist from './components/watchlist';
+import Watched from './components/watched';
+import Add from './components/add';
+import "./lib/font-awesome/css/all.min.css";
+import "./App.css";
+import {Globalprovider} from './context/globalstate';
+
+
+require('dotenv').config()
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Globalprovider>
+    <Router>
+      <Header/>
+      <Switch>
+        <Route exact path='/watchlist'> <Watchlist/> </Route>
+        <Route exact path='/watched'> <Watched/> </Route>
+        <Route exact path='/add'> <Add/> </Route>
+      </Switch>
+    </Router>
+    </Globalprovider>
   );
 }
 
