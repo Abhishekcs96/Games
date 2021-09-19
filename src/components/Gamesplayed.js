@@ -10,7 +10,7 @@ const result = useSelector(state=>state.GameReducer.gamesplayed)
             <div className="header">
                <h1 className ='heading'>Games played</h1> 
                    
-               {result.length > 0 ? (  <div className="game-grid">
+               {result.length > 0 ? (  <div className="game-grid" key={result.id}>
                 {result.map((games)=>(<Gamecard props ={games} type= "gamesplayed"/>))}
             </div>) : (<h2 className='No-games'> Collection complete!...or youre yet to complete any.. Add some! </h2>)} 
             </div>
@@ -19,5 +19,4 @@ const result = useSelector(state=>state.GameReducer.gamesplayed)
     </div>
     )
 }
-
 export default Gamesplayed;

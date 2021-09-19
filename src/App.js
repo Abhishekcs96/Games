@@ -5,6 +5,7 @@ import Gameslist from './components/Gameslist';
 import Gamesplayed from './components/Gamesplayed';
 import Search from './components/Search';
 import "./App.css";
+import Mobilemenu from './components/Mobilemenu';
 
 
 
@@ -15,6 +16,7 @@ function App() {
   return ( 
     <Router>
       <Header/>
+      <Mobilemenu/>
       <Switch>
         <Route  exact path='/'> <Search/> </Route>
         <Route exact path='/Gameslist'> <Gameslist/> </Route>

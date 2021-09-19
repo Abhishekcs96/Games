@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 
-:root {
-  --primary: #1d3b55;
-  --secondary: #e3e644;
-  --white: #fff;
-  
-}
-
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
@@ -15,33 +8,12 @@ body {
   background-size: 100vw 100vh;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  
-
-
 }
-.container {
+#navbar {
   padding-right: 2vw;
   padding-left: 2vw;
   margin-right: auto;
   margin-left: auto;
-}
-
-@media screen and (min-width: 768px) {
-  .container {
-    width: 95vw;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .container {
-    width: 95vw;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 95vw;
-  }
 }
 
 *,
@@ -49,24 +21,6 @@ body {
 *:after {
   box-sizing: border-box;
 }
-
-/*.btn {
-  
-  color: var(--primary);
-  border-radius: 5px;
-  font-weight: 700;
-  display: inline-block;
-  border: none;
-  font-size: 1rem;
-  transition: all 0.3s ease;
-  line-height: 1.1;
-}
-
-.btn:hover {
-  background-color: #1aa762;
-  opacity: 1;
-  cursor: pointer;
-} */
 
 .btn:disabled {
   pointer-events: none;
@@ -78,14 +32,10 @@ input:focus {
 }
 
 
-
-
 /*header js styling starts here */
 
-
-
 header {
-  background-color: rgb(54, 53, 54);
+  background-color: #363536;
 }
 
 
@@ -130,6 +80,129 @@ header .nav-links li:last-child {
   margin-right: 0;
 }
 
+
+
+.bm-burger-button {
+  position: fixed;
+  width: 10vh;
+  overflow-y: hidden;
+  transform: scale(0.6);
+  top: 0;
+  left: 0;
+}
+
+.mobile-navbar {
+  display: none;
+}
+
+.mobile.container{
+  display: none;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #ededf0;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: #a90000;
+}
+
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #ededf0;
+}
+
+/*
+  Sidebar wrapper styles
+  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+  */
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background-color: #131213; 
+  padding: 2.5em 0;
+  font-size: 1.15em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #1e1f20;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  padding: 0.8em;
+  list-style-type: none;
+}
+
+/* Individual item */
+.bm-item.brand {
+  text-align: center;
+  color: #ededf0 
+}
+
+.bm-item.brand.a{
+  color: #ededf0!important;
+}
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+#mobilelinks {
+  padding: 0;
+  margin: auto;
+  width: max-content;
+  list-style-type: none;
+  color: #ffffff!important;
+}
+
+@media screen and (min-width:350px)  {
+  .bm-item.nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center ;
+    align-items: start;
+    padding: 0;
+    list-style-type: none;
+  }
+  .bm-item.nav-links li {
+    margin-top: 10%;
+  }
+  .bm-item.nav-links li .button{
+    text-decoration: none;
+    font: 200;
+    font-size: 20px;
+    color: #fff;
+  }
+  .mobile-navbar {
+    display: block;
+  }
+  
+  .mobile.container{
+    display: block;
+  }
+}
+
+
+
 /* Search styling */
 .add-content {
   padding: 8vh 0;
@@ -139,11 +212,11 @@ header .nav-links li:last-child {
 
 .add-content .input-wrapper input {
   width: 100%;
-  background-color: var(--primary);
+  background-color: #1d3b55;
   padding: 10px;
   border-radius: 5px;
   border: none;
-  color: var(--white);
+  color: #fff;
   font-size: 1.25rem;
 }
 
@@ -161,16 +234,14 @@ header .nav-links li:last-child {
 .result-card {
   display: flex;
   margin-bottom: 20px;
-}
-.poster-wrapper{
-  max-width: 70%;
-  max-height: 100%;
+  justify-content: space-evenly;
 }
 
-.poster-wrapper>img{
-    height: 100%;
-    width: 100%;
+#img-aspect-sizing{
+  width: 100%;
+  height: auto;
 }
+
 .filler-poster {
   width: 75px;
   height: 113px;
@@ -188,33 +259,32 @@ header .nav-links li:last-child {
   justify-content: space-between;
 }
 
-.title, .Release_date {
+.title, .Release-date, .Rating {
   font-size: 1.25rem;
   color: #dad045;
   font-weight: 600;
   margin: 0;
 }
+.controls{
+  margin: 10px;
+}
+.controls button {
 
-
-
-.result-card .controls button {
-  margin-right: 10px;
   width:50%;
   height: 40%;
-  margin-bottom: 10px;
-  border-radius: 10px;
+
+  border-radius: 5px;
   color: #fff;
-  font-weight: 400;
+
   text-align: center;
 }
-
-
 
 Button:hover{
   background-color: #1b1a16;
 } 
 
-/* Movie Page */
+
+
 .game-page {
   padding: 30px 0;
 }
@@ -229,12 +299,12 @@ Button:hover{
 
 .count-pill {
   display: block;
-  background-color: var(--secondary);
+  background-color: #e3e644;
   padding: 5px 15px;
   font-size: 1.125rem;
   font-weight: 600;
   border-radius: 999px;
-  color: var(--primary);
+  color: #1d3b55;
 }
 
 .game-page .heading {
@@ -248,11 +318,7 @@ Button:hover{
   grid-gap: 30px;
 }
 
-@media screen and (min-width: 992px) {
-  .game-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
-}
+
 
 .game-card {
   width: 100%;
@@ -260,13 +326,11 @@ Button:hover{
   overflow: hidden;
   position: relative;
   border: 0;
-  display: block;
+  display: flex;
+  flex-direction: column;
+
 }
 
-.game-card>img {
-  width: 100%;
-  display: block;
-}
 .overlay {
   position: absolute;
   top: 0;
@@ -278,7 +342,7 @@ Button:hover{
 }
 
 .game-card:hover .overlay {
-  border: 3px solid var(--secondary);
+  border: 3px solid #e3e644;
 }
 
 .inner-card-controls {
@@ -295,8 +359,83 @@ Button:hover{
 }
 
 
-.game-page .no-games {
+.no-games {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;
+}
+
+
+@media screen and (min-width: 350px) {
+  .result-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  h3.title, h4.Rating, h5.Release-date {
+    text-align: center;
+    margin: auto;
+    font-size: 12px;
+  }
+  .result-card .controls{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center ;
+  }
+  .result-card .controls button{
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .game-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    width: 95vw;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .container {
+    width: 95vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 95vw;
+  }
+}
+
+@media screen and (max-width:580px) {
+  #navbar{
+      display: none;
+  }
+  #navbar-links{
+      display: none;
+  }
+}
+
+
+@media screen and (min-width:768px)  {
+  .mobile-navbar {
+    display: none;
+  }
+
+  .mobile.container{
+    display: none;
+  }
+
+  .bm-item.navlinks {
+    padding: 0;
+    margin: 0;
+    width: max-content;
+  }
 }

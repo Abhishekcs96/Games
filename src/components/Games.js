@@ -3,6 +3,7 @@ import {useSelector} from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { addGamesPlayed, addGamesToPlay } from '../redux/Actions/actions';
 import {Button} from '@mui/material';
+import { DriveFileMoveIcon } from '@mui/icons-material';
 
 const Games = ({props}) => {
  const result1 = useSelector((state)=>state.GameReducer.gamestoplay)
@@ -17,7 +18,7 @@ const Games = ({props}) => {
         <div className="result-card">
             <div className="poster-wrapper">
                 {props.background_image ? (
-                    <img src = {props.background_image}
+                    <img id='img-aspect-sizing' src = {props.background_image}
                     alt ={`${props.name} Poster`}/>
                 ):(
                     <div className="filler-poster"></div>
@@ -26,14 +27,15 @@ const Games = ({props}) => {
             </div>
             <div className="info">
                 <div className="header">
-                    <h3 className="title">{props.name}</h3>
-                    <h4 className="Rating">{props.rating}</h4>
-                    <h5 className='Release-date'>{props.released}</h5>
+                    <h3 className="title">Title:   {props.name}</h3>
+                    <h4 className="Rating">Ratings:   {props.rating}</h4>
+                    <h5 className='Release-date'>Release Date:   {props.released}</h5>
                 </div>
 
                 <div className="controls">
-                    <Button variant = 'contained'   disabled={disablebutton} onClick={()=> dispatch(addGamesToPlay(props))}>Add to list</Button>
-                    <Button variant = 'contained'  disabled={disablebutton}  onClick={()=> dispatch(addGamesPlayed(props))}>Add to played</Button> 
+                    <Button variant = 'contained'  disabled={disablebutton} onClick={()=> dispatch(addGamesToPlay(props))}> list</Button></div>
+                    <div className="controls">
+                    <Button variant = 'contained'  disabled={disablebutton}  onClick={()=> dispatch(addGamesPlayed(props))}> played</Button> 
 
                 </div>
             </div>

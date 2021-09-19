@@ -12,7 +12,7 @@ const Gameslist = () => {
                   <div className="header">
                      <h1 className ='heading'>My Gameslist</h1> 
                          
-                     {result.length > 0 ? (  <div className="game-grid">
+                     {result.length > 0 ? (  <div className="game-grid" key={result.id}>
                       {result.map((games)=>(<Gamecard props ={games} type="gamestoplay"/>))}
                   </div>) : (<h2 className='No-games'> This space looks empty...Add games! </h2>)} 
                   </div>
