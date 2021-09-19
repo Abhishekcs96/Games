@@ -1,39 +1,46 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap");
 
 :root {
-  --primary: #032541;
-  --secondary: #21d07a;
+  --primary: #1d3b55;
+  --secondary: #e3e644;
   --white: #fff;
+  
 }
 
 body {
   font-family: "Source Sans Pro", sans-serif;
   padding: 0;
   margin: 0;
-}
+  background-image: url('./images/background-1060405.png');
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  
 
+
+}
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 2vw;
+  padding-left: 2vw;
   margin-right: auto;
   margin-left: auto;
 }
 
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .container {
-    width: 750px;
+    width: 95vw;
   }
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 95vw;
   }
 }
 
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 95vw;
   }
 }
 
@@ -43,12 +50,10 @@ body {
   box-sizing: border-box;
 }
 
-.btn {
-  padding: 10px 15px;
-  background-color: var(--secondary);
+/*.btn {
+  
   color: var(--primary);
   border-radius: 5px;
-  text-transform: uppercase;
   font-weight: 700;
   display: inline-block;
   border: none;
@@ -61,7 +66,7 @@ body {
   background-color: #1aa762;
   opacity: 1;
   cursor: pointer;
-}
+} */
 
 .btn:disabled {
   pointer-events: none;
@@ -72,12 +77,19 @@ input:focus {
   outline: none;
 }
 
-/* Header Styles */
+
+
+
+/*header js styling starts here */
+
+
+
 header {
-  background-color: var(--primary);
+  background-color: rgb(54, 53, 54);
 }
 
-header .inner-content {
+
+.inner-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -85,14 +97,15 @@ header .inner-content {
 }
 
 header a {
-  color: var(--white);
+  color: #fff;
   font-size: 1.25rem;
+  transition: all 0.3s ease-out;
   text-decoration: none;
-  transition: all 0.3s ease;
 }
 
-header a:hover {
+a:hover {
   opacity: 0.7;
+  font-size: 1.4rem;
 }
 
 header .brand a {
@@ -117,10 +130,10 @@ header .nav-links li:last-child {
   margin-right: 0;
 }
 
-/* Add Page */
+/* Search styling */
 .add-content {
-  padding: 50px 0;
-  max-width: 600px;
+  padding: 8vh 0;
+  max-width: 50vw;
   margin: 0 auto;
 }
 
@@ -134,13 +147,14 @@ header .nav-links li:last-child {
   font-size: 1.25rem;
 }
 
-.results {
+.results-container {
   padding: 0;
   margin: 0;
   margin-top: 20px;
+  list-style-type: none;
 }
 
-.results li {
+.results>li {
   list-style: none;
 }
 
@@ -148,8 +162,15 @@ header .nav-links li:last-child {
   display: flex;
   margin-bottom: 20px;
 }
+.poster-wrapper{
+  max-width: 70%;
+  max-height: 100%;
+}
 
-.result-card .poster-wrapper img,
+.poster-wrapper>img{
+    height: 100%;
+    width: 100%;
+}
 .filler-poster {
   width: 75px;
   height: 113px;
@@ -160,37 +181,47 @@ header .nav-links li:last-child {
   color: transparent;
 }
 
-.result-card .info {
+.info {
   display: flex;
+  margin-left: 4vw;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.result-card .info .title {
+.title, .Release_date {
   font-size: 1.25rem;
-  color: var(--primary);
+  color: #dad045;
   font-weight: 600;
   margin: 0;
 }
 
-.result-card .info .release-date {
-  font-size: 1.25rem;
-  font-weight: 300;
-  color: var(--primary);
-  margin: 0;
-}
+
 
 .result-card .controls button {
   margin-right: 10px;
+  width:50%;
+  height: 40%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
 }
 
+
+
+Button:hover{
+  background-color: #1b1a16;
+} 
+
 /* Movie Page */
-.movie-page {
+.game-page {
   padding: 30px 0;
 }
 
-.movie-page .header {
+.game-page .header {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 30px;
@@ -206,24 +237,24 @@ header .nav-links li:last-child {
   color: var(--primary);
 }
 
-.movie-page .heading {
-  color: var(--primary);
-  margin: 0;
+.game-page .heading {
+  color: #dad045;
 }
 
-.movie-grid {
+.game-grid {
+  margin-top: 3vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
 
-@media (min-width: 992px) {
-  .movie-grid {
+@media screen and (min-width: 992px) {
+  .game-grid {
     grid-template-columns: repeat(5, 1fr);
   }
 }
 
-.movie-card {
+.game-card {
   width: 100%;
   border-radius: 5px;
   overflow: hidden;
@@ -232,12 +263,11 @@ header .nav-links li:last-child {
   display: block;
 }
 
-.movie-card img {
+.game-card>img {
   width: 100%;
   display: block;
 }
-
-.movie-card .overlay {
+.overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -247,44 +277,25 @@ header .nav-links li:last-child {
   transition: all 0.3s ease;
 }
 
-.movie-card:hover .overlay {
+.game-card:hover .overlay {
   border: 3px solid var(--secondary);
 }
 
-.movie-card .inner-card-controls {
-  display: inline;
-  background-color: red;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
+.inner-card-controls {
+  display: flex;
+  flex-direction: column;
   border-radius: 5px;
+  margin-top: 1vh;
   padding: 3px;
-  opacity: 0;
   transition: all 0.3s ease;
 }
 
-.movie-card:hover .inner-card-controls {
-  opacity: 1;
+#Button-card-control{
+   margin-top: 1vh;
 }
 
-.ctrl-btn {
-  color: #fefefe;
-  background-color: transparent;
-  border: none;
-  transition: all 0.3s ease;
-  font-size: 1.25rem;
-  padding: 5px;
-  margin: 0;
-}
 
-.ctrl-btn:hover {
-  color: var(--secondary);
-  cursor: pointer;
-}
-
-.movie-page .no-movies {
+.game-page .no-games {
   color: #c4c4c4;
   font-size: 3rem;
   text-align: center;
