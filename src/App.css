@@ -254,7 +254,6 @@ header .nav-links li:last-child {
 
 .info {
   display: flex;
-  margin-left: 4vw;
   flex-direction: column;
   justify-content: space-between;
 }
