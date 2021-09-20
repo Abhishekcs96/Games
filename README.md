@@ -1,3 +1,14 @@
+Built using ReactJS and uses Redux for state management. Styled using CSS and Material-UI.
+This project allows the user to search for games from the RAWG database and then allows the user,
+to sort the games to their play-list or their played list. Uses browser localstorage to store and 
+persist state data.
+
+Known Issues-
+When users backspace their search, the app will not be able to render as conditional statements will fail,
+working on a fix. Users have to select the text and type again instead of backspacing it or
+clearing it entirely.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
